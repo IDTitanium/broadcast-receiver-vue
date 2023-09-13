@@ -35,6 +35,13 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created() {
+    window.Echo.channel('property')
+            .listen('.property.created', (e) => {
+            console.log(e);
+         });
+    console.log("hello world")
   }
 }
 </script>
